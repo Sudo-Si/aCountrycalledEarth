@@ -1,5 +1,9 @@
-const  Dashboard =()=>
+const  Dashboard =({user})=>
 {
-    return <div> <h1>Dashboard</h1></div>
+    return     (
+    <section> 
+        <h1>Dashboard ,{user?.name}</h1>
+    
+    </section>)
 }
 export default Dashboard;

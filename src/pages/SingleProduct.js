@@ -1,10 +1,22 @@
-import Home from './Home';
-import { Link } from "react-router-dom";
-const  SingleProduct =()=>
-{
-    return <div> <h1>SingleProduct</h1>
-      <button>   <Link to='/' className="btn" element={<Home/>}>Home</Link></button>
+
+import products from './data';
+import Products from "./Products";
+import { Link, useParams } from "react-router-dom";
+const  SingleProduct =()=>{
+  const {productId} = useParams();
+  const product = products.find((product)=> product.id === productId);
+  const {image, name}= product
+
+    return (
+    <section className="section product"> 
+    <div className="sngl-prd">
+     
+<img className="img" src={image} alt=" Kiwi"/>
+      <h1> {name}</h1>
+    </div>
       
-      </div>
+      <p>   <Link to='/products' className="btn" element={<Products/>}>Back to Products</Link></p>
+      
+    </section >)
 }
-export default SingleProduct;
+export default SingleProduct;;
