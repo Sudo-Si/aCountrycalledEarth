@@ -2,7 +2,7 @@ const  Dashboard =({user})=>
 {
     return     (
     <section> 
-        <h1>Dashboard ,{user?.name}</h1>
+        <h1>{user?.name}'s Dashboard </h1>
     
     </section>)
 }

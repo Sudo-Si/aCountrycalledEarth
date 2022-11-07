@@ -5,11 +5,14 @@ import Error from './pages/Error'
 import Products from './pages/Products';
 import SingleProduct from './pages/SingleProduct';
 import SharedLayout from './pages/SharedLayout';
+import SharedProductLayout from './pages/SharedProductLayout';
 import Footer from './pages/Footer';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard'
-import About from './pages/About'
-import './App.css'
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './pages/ProtectedRoute';
+
+import About from './pages/About';
+import './App.css';
 function App() {
   const [user,setUser] =useState(null)
   return (
@@ -19,12 +22,22 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path='/products' element={<Products/>} />
         <Route path='/about' element={<About/>} />
-        <Route path='products/:productId' element={<SingleProduct/>}/>
-        <Route path='/login' element={<Login setUser ={setUser}>
-          </Login>} />     
-        <Route path='/Dashboard' element={<Dashboard user ={user}>
-          </Dashboard>} />     
-        {/* <Route path='/dashboard' element={<Dashboard/>} />      */}
+
+        <Route path='/products' element={<SharedProductLayout />}>
+          <Route index element ={<Products />}/>
+          <Route path=':productId' element={<SingleProduct/>}/> 
+        </Route>
+       
+        <Route path='/login' element={<Login setUser ={setUser}></Login>} />     
+        <Route 
+        path='dashboard'
+         element={
+         <ProtectedRoute user={user}>
+          <Dashboard user ={user}/>
+         </ProtectedRoute>
+          }
+           />     
+         
         <Route path='*' element={<Error/>} />
         </Route>
       </Routes>

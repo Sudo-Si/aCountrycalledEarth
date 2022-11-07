@@ -5,7 +5,7 @@ const  Products =()=>
 {
     return (
     <section className="section"> 
-    <h1>Products</h1>
+    {/* <h1>Products</h1> */}
   
     <div className="products"> 
     {products.map((product)=>{
