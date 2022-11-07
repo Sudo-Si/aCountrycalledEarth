@@ -37,7 +37,6 @@ margin: 3px;}
  justify-content: center;
 
  
- /* background-color:blue; */
 }
 .form input, button{
  background-color:white;
@@ -46,7 +45,7 @@ margin: 3px;}
 .section, .product{
   dispaly: flex;
   justify-content:center;
- /* padding:auto; */
+
   align-items: center;
 }
 .nav .btn{
@@ -66,8 +65,12 @@ margin: 3px;}
   color: aqua;
 }
 
-.products h1{
+.art {
+  display: grid;
+  justify-content: center;
   color: aqua;
+  height:100vh;
+ 
 }
 .rtn-hme{ 
   align-items: center;

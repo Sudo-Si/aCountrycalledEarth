@@ -5,12 +5,12 @@ const  Products =()=>
 {
     return (
     <section className="section"> 
-    {/* <h1>Products</h1> */}
   
     <div className="products"> 
     {products.map((product)=>{
-        return <article key={product.id}>
+        return <article className ="art" key={product.id}>
             <h1>{product.name}</h1>
+            <img src={product.image} alt="product "/>
            <p><Link to ={`/products/${product.id}`}> more Info</Link></p> 
         </article>
     })}
